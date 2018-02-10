@@ -3,7 +3,7 @@
 
 #fuses MCLR //Se configura master clear
 #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
-#fuses INTRC_IO
+//#fuses INTRC_IO
 
 #use delay(internal=8000000)//Se configura reloj interno a 8M
 
@@ -72,12 +72,12 @@ unsigned int aux[3]={0,0,0};
 
 void main(void) {
 //reloj interno
-setup_oscillator(OSC_8MHZ|OSC_INTRC);
+setup_oscillator(OSC_8MHZ);
 
 
 //Entradas y salidas
 TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA
-//TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA
+TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA
 
 //!enable_interrupts(int_ext);      //activar interrupcion externa
 //!ext_int_edge(H_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida

@@ -72,7 +72,7 @@ unsigned int aux[3]={0,0,0};
 
 void main(void) {
 //reloj interno
-setup_oscillator(OSC_8MHZ|OSC_INTRC);
+//setup_oscillator(OSC_8MHZ);
 
 
 //Entradas y salidas

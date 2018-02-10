@@ -1,7 +1,7 @@
 [PROJECT]
 Target=Codificador8QAM.hex
 Processor_Text=PIC16F887
-CCSVersion=5.015
+CCSVersion=5.070
 Compiler=PCM
 [Target Data]
 FileList=Codificador8QAM.c
@@ -11,6 +11,38 @@ Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers
 Type=4
 [mru-list]
 1=Codificador8QAM.c
+
+[ProjectLog]
+Days=1
+D1=10-02-2018
+D1_L=13
+D1_L1=[37493]Project Opened.
+D1_L2=[37600]Started Editing.
+D1_L3=[38676]Stopped Editing.
+TotalEdit=13
+TotalDebug=0
+D1_E=13
+D1_D=0
+D1_L4=[38781]Project Closed.
+D1_L5=[38800]Project Opened.
+D1_L6=[38843]Started Editing.
+D1_L7=[39302]Stopped Editing.
+D1_L8=[39866]Started Editing.
+D1_L9=[40267]Stopped Editing.
+D1_L10=[40287]Started Editing.
+D1_L11=[40861]Stopped Editing.
+D1_L12=[41311]Started Editing.
+D1_L13=[42795]Stopped Editing.
+
+[Opened Files]
+1=Codificador8QAM.c
+t1=65
+Count=2
+2=..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+t2=734
+
+[defines]
+buildcount=29
 [Units]
 Count=1
 1=Codificador8QAM (main)

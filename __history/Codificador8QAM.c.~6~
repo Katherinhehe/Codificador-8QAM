@@ -1,0 +1,71 @@
+#include <16F887.h>         // Modify for your chip
+
+
+#fuses MCLR //Se configura master clear
+#fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
+
+#use delay(internal=8M)//Se configura reloj interno a 8M
+
+//Se ubican los registros de configuracion de puertos
+
+#Byte TRISA = 0x85 
+#Byte PORTA = 0x05
+#Byte TRISB = 0x86
+#Byte PORTB = 0x06
+
+//#fuses XT,NOMCLR,NOWDT,PUT,NOLVP...
+
+//en XT le dice al pic que lleva un oscilador conectado <4mhz
+//el NOMCLR le dice al pic que deshabilita el pin masterclear, desactiva el reset externo por el pic MCLR
+//el NOWDT le dice al pic que deshabilita el Watchdog timer "perro guardian"
+//el PUT habilita el Power Up Timer, tiempo de espera para estabilizacion de alimentacion
+//el NOLVP deshabilita un pin asignado para la programacion de bajo voltaje... low voltage programing
+
+int cuenta,p;
+unsigned int arreglo[24]={0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,1,0,1,1,1,0,1,1,1};
+
+
+#int_EXT
+void control(){
+if(cuenta==24){
+   cuenta=0;
+   
+}else{
+   
+   if(p==3){
+        p=0;
+   }else{
+      p++;
+   }
+   aux[p]=arreglo[cuenta];
+   cuenta++;
+}
+
+if(arreglo{cuenta]==1){
+output_high(PIN_B1);
+}else{
+output_low(PIN_B1);
+}
+
+}
+
+
+
+void main(void) {
+
+//Entradas y salidas
+TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA
+TRISB = 0b00000000; //1 = ENTRADA, 0 = SALIDA
+
+enable_interrupts(int_ext);      //activar interrupcion externa
+ext_int_edge(L_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida
+enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas
+
+
+    while(true) {           // Produces a 1khz square wave on pin B0
+        output_high(PIN_B0);
+        delay_us(500);
+        output_low(PIN_B0);
+        delay_us(500);
+    }
+}

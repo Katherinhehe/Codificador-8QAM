@@ -1,37 +1,45 @@
 004-005 @READ_PROGRAM_MEMORY8.P1
 004-005 @WRITE_PROGRAM_MEMORY8.P2
-015     CCP_1
+005     PORTA
+006     PORTB
 015     CCP_1_LOW
+015     CCP_1
 016     CCP_1_HIGH
-01B     CCP_2
 01B     CCP_2_LOW
+01B     CCP_2
 01C     CCP_2_HIGH
-021     main.@SCRATCH1
-022     @delay_us1.P1
+020     cuenta
+021     p
+022-039 arreglo
+03A-03C aux
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
 079     @SCRATCH
 07A     @SCRATCH
+085     TRISA
+086     TRISB
 107.6   C1OUT
 108.6   C2OUT
 10D-10E @WRITE_PROGRAM_MEMORY8.P1
 10D-10E @READ_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  @delay_us1
-000015  main
-000015  @cinit1
-00002A  @cinit2
+000004  main
+000004  @cinit1
+000020  @cinit2
 
 Project Directory:
-    C:\Users\Katherine\Documents\CCS C Projects\
+    C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\
 
 Project Files:
-    Codificador8QAM.c                                       [09-feb.-18 22:30  CRC=C80DB63F]
-    ..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h   [12-nov.-13 14:35  CRC=6CB1A611]
+    Codificador8QAM.c                                       [10-feb.-18 11:48  CRC=B07132FA]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [24-feb.-17 16:21  CRC=480F3B7F]
 
-Source signature=A1710261
+Source signature=408FA9F8
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=C44A
 
 Units:
     Codificador8QAM (main)
@@ -43,6 +51,7 @@ Compiler Settings:
     Opt Level:      9
     Short,Int,Long: UNSIGNED: 1,8,16
     Float,Double:   32,32
+    Compile Mode:       CCS5
 
 Output Files:
     XREF file:   Codificador8QAM.xsym
