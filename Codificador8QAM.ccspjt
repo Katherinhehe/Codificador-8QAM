@@ -15,7 +15,7 @@ Type=4
 [ProjectLog]
 Days=1
 D1=10-02-2018
-D1_L=13
+D1_L=22
 D1_L1=[37493]Project Opened.
 D1_L2=[37600]Started Editing.
 D1_L3=[38676]Stopped Editing.
@@ -33,16 +33,25 @@ D1_L10=[40287]Started Editing.
 D1_L11=[40861]Stopped Editing.
 D1_L12=[41311]Started Editing.
 D1_L13=[42795]Stopped Editing.
+D1_L14=[43474]Started Editing.
+D1_L15=[44293]Stopped Editing.
+D1_L16=[44397]Started Editing.
+D1_L17=[44697]Stopped Editing.
+D1_L18=[45229]Started Editing.
+D1_L19=[45535]Stopped Editing.
+D1_L20=[45706]Started Editing.
+D1_L21=[46148]Stopped Editing.
+D1_L22=[46563]Started Editing.
 
 [Opened Files]
 1=Codificador8QAM.c
-t1=65
+t1=30
 Count=2
 2=..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
-t2=734
+t2=434
 
 [defines]
-buildcount=29
+buildcount=37
 [Units]
 Count=1
 1=Codificador8QAM (main)
