@@ -1,9 +1,8 @@
 #include <16F887.h>         // Modify for your chip
 
 
-#fuses MCLR //Se configura master clear
+#fuses NOMCLR //Se configura master clear
 #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
-#fuses INTRC_IO
 
 #use delay(clock=4M)
 
@@ -23,10 +22,19 @@
 //el PUT habilita el Power Up Timer, tiempo de espera para estabilizacion de alimentacion
 //el NOLVP deshabilita un pin asignado para la programacion de bajo voltaje... low voltage programing
 
-int cuenta=1,p=1;
+#DEFINE S PIN_A0
+#DEFINE P1 PIN_A1
+#DEFINE P2 PIN_A2
+#DEFINE P3 PIN_A3
+
+
+int cuenta=0,p=0;
+//0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,1,0,1,1,1,0,1,1,1
 unsigned int arreglo[24]={0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,1,0,1,1,1,0,1,1,1};
 unsigned int aux[3]={0,0,0};
-//!
+
+
+
 #int_EXT
 void control(){
 
@@ -36,53 +44,56 @@ if(cuenta==24){
    
 if(p==3){
 
-   if(aux[1]==1){
-      output_high(PIN_A2);
+   if(aux[0]==1){
+      output_high(P1);
    }else{
-      output_low(PIN_A2);
+      output_low(P1);
+   }
+   if(aux[1]==1){
+      output_high(P2);
+   }else{
+      output_low(P2);
    }
    if(aux[2]==1){
-      output_high(PIN_A3);
+      output_high(P3);
    }else{
-      output_low(PIN_A3);
-   }
-   if(aux[3]==1){
-      output_high(PIN_A4);
-   }else{
-      output_low(PIN_A4);
+      output_low(P3);
    }
 
    p=0;
 }
 
 if(arreglo[cuenta]==1){
-   output_high(PIN_A1);
+   output_high(S);
 }else{
-   output_low(PIN_A1);
+   output_low(S);
 }
-
 aux[p]=arreglo[cuenta];
+
 p++;
 cuenta++;
-
-
 }
 
 
 
 void main(void) {
-//reloj interno
-
 
 //Entradas y salidas
 TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA
-//TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA
+TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA
 
 enable_interrupts(int_ext);      //activar interrupcion externa
 ext_int_edge(H_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida
 enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas
 p=0;
 cuenta=0;
+output_low(S);
+output_low(P1);
+output_low(P2);
+output_low(P3);
+
+
     while(true) {           // Produces a 1khz square wave on pin B0
-    }
+      
+      }
 }

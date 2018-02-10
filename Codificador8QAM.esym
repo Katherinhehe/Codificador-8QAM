@@ -1,10 +1,10 @@
-F N "MAIN" 0 73 ""
-D G "__PCM__" 0 90 ""5.070""
-D G "__DEVICE__" 0 90 "887"
-D G "__DATE__" 0 90 ""10-feb.-18""
-D G "__TIME__" 0 90 ""12:56:15""
-D G "_UNICODE" 0 90 ""?""
-D G "__EVAL" 0 90 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
+C L "MAIN" 0 9 1 "FUNCTION"
+D G "__PCM__" 0 101 ""5.070""
+D G "__DEVICE__" 0 101 "887"
+D G "__DATE__" 0 101 ""10-feb.-18""
+D G "__TIME__" 0 101 ""15:22:52""
+D G "_UNICODE" 0 101 ""?""
+D G "__EVAL" 0 101 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 f N "set_tris_a" 1 39 ""
 v L "value" 1 39 "int8" `55 
@@ -1115,21 +1115,25 @@ d G "INT_RB4" 1 770 "0x1100B08"
 d G "INT_RB5" 1 771 "0x1200B08"
 d G "INT_RB6" 1 772 "0x1400B08"
 d G "INT_RB7" 1 773 "0x1800B08"
-C L "jump_to_isr" 0 10 1 "FUNCTION"
-C L "jump_to_isr" 0 10 6 "FUNCTION"
-V G "cuenta" 0 26 "int8" `608 
-V G "p" 0 26 "int8" `609 
-V G "arreglo" 0 27 "int8[24]" `610 
-V G "aux" 0 28 "int8[3]" `611 
-F N "control" 0 31 ""
-F G "control" 0 31 "void()" `612 
-F N "MAIN" 0 73 ""
-F G "MAIN" 0 73 "void()" `613  "reloj interno"
-C L "MAIN" 0 10 1 "FUNCTION"
-C L "MAIN" 0 10 2 "FUNCTION"
-C L "MAIN" 0 10 1 "FUNCTION"
-C L "MAIN" 0 10 1 "FUNCTION"
-C L "MAIN" 0 10 1 "FUNCTION"
+C L "jump_to_isr" 0 9 1 "FUNCTION"
+D G "S" 0 25 "PIN_A0"
+D G "P1" 0 26 "PIN_A1"
+D G "P2" 0 27 "PIN_A2"
+D G "P3" 0 28 "PIN_A3"
+V G "cuenta" 0 31 "int8" `608 
+V G "p" 0 31 "int8" `609 
+C L "jump_to_isr" 0 9 1 "FUNCTION"
+V G "arreglo" 0 33 "int8[24]" `610 
+V G "aux" 0 34 "int8[3]" `611 
+F N "control" 0 39 ""
+F G "control" 0 39 "void()" `612 
+F N "MAIN" 0 79 ""
+F G "MAIN" 0 79 "void()" `613  "Entradas y salidas"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0

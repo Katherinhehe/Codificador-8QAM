@@ -102,19 +102,19 @@ ROM Allocation:
 00002F  control
 000081  MAIN
 000081  @cinit1
-00009D  @cinit2
+000095  @cinit2
 
 Project Directory:
     C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\
 
 Project Files:
-    Codificador8QAM.c                                       [10-feb.-18 12:56  CRC=4CC378FD]
+    Codificador8QAM.c                                       [10-feb.-18 15:22  CRC=D067A342]
     ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [24-feb.-17 16:21  CRC=480F3B7F]
 
-Source signature=DCE1EFFB
+Source signature=60861A40
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=DC94
+Hex file CRC=4733
 
 Units:
     Codificador8QAM (main)
