@@ -108,13 +108,13 @@ Project Directory:
     C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\
 
 Project Files:
-    Codificador8QAM.c                                       [10-feb.-18 15:22  CRC=D067A342]
+    Codificador8QAM.c                                       [13-feb.-18 11:43  CRC=D0535712]
     ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [24-feb.-17 16:21  CRC=480F3B7F]
 
-Source signature=60861A40
+Source signature=6071CE10
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=4733
+Hex file CRC=7B79
 
 Units:
     Codificador8QAM (main)

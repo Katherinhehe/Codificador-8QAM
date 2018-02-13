@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.070, 56587               10-feb.-18 15:22
+CCS PCM C Compiler, Version 5.070, 56587               13-feb.-18 13:22
 
                Filename:   C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\Codificador8QAM.lst
 
@@ -76,8 +76,9 @@ CCS PCM C Compiler, Version 5.070, 56587               10-feb.-18 15:22
 ....................  
 .................... #fuses NOMCLR //Se configura master clear 
 .................... #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad 
+.................... #fuses HS//Alta velocidad 
 ....................  
-.................... #use delay(clock=4M) 
+.................... #use delay(clock=20M) 
 ....................  
 .................... //Se ubican los registros de configuracion de puertos 
 ....................  
@@ -338,5 +339,5 @@ CCS PCM C Compiler, Version 5.070, 56587               10-feb.-18 15:22
 00D1:  SLEEP
 
 Configuration Fuses:
-   Word  1: 2FC7   RC NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  1: 2FC2   HS NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
    Word  2: 3FFF   BORV40 NOWRT

@@ -3,8 +3,9 @@
 
 #fuses NOMCLR //Se configura master clear
 #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
+#fuses HS//Alta velocidad
 
-#use delay(clock=4M)
+#use delay(clock=20M)
 
 //Se ubican los registros de configuracion de puertos
 
