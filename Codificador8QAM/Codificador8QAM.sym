@@ -1,0 +1,105 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+005     PORTA
+006     PORTB
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     cuenta
+028     p
+029-040 arreglo
+041-043 aux
+044     control.@SCRATCH1
+045     control.@SCRATCH2
+046     control.@SCRATCH3
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07F     @INTERRUPT_AREA
+085     TRISA
+086     TRISB
+0FF     @INTERRUPT_AREA
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+17F     @INTERRUPT_AREA
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+2FF     @INTERRUPT_AREA
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+47F     @INTERRUPT_AREA
+4FF     @INTERRUPT_AREA
+57F     @INTERRUPT_AREA
+5FF     @INTERRUPT_AREA
+67F     @INTERRUPT_AREA
+6FF     @INTERRUPT_AREA
+77F     @INTERRUPT_AREA
+7FF     @INTERRUPT_AREA
+87F     @INTERRUPT_AREA
+8FF     @INTERRUPT_AREA
+97F     @INTERRUPT_AREA
+9FF     @INTERRUPT_AREA
+A7F     @INTERRUPT_AREA
+AFF     @INTERRUPT_AREA
+B7F     @INTERRUPT_AREA
+BFF     @INTERRUPT_AREA
+C7F     @INTERRUPT_AREA
+CFF     @INTERRUPT_AREA
+D7F     @INTERRUPT_AREA
+DFF     @INTERRUPT_AREA
+E7F     @INTERRUPT_AREA
+EFF     @INTERRUPT_AREA
+F7F     @INTERRUPT_AREA
+FFF     @INTERRUPT_AREA
+
+ROM Allocation:
+00002F  control
+000081  MAIN
+000081  @cinit1
+000095  @cinit2
+
+Project Directory:
+    C:\Users\Katherine\Documents\Comunicaciones Digitales\Codificador\
+
+Project Files:
+    Codificador8QAM.c                                       [12-feb.-18 17:30  CRC=E3AFC3D9]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [12-nov.-13 14:35  CRC=6CB1A611]
+
+Source signature=BD130FFB
+
+Units:
+    Codificador8QAM (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Codificador8QAM.xsym
+    Errors:      Codificador8QAM.err
+    Ext Symbols: Codificador8QAM.esym
+    INHX8:       Codificador8QAM.hex
+    Symbols:     Codificador8QAM.sym
+    List:        Codificador8QAM.lst
+    Debug/COFF:  Codificador8QAM.cof
+    Project:     Codificador8QAM.ccspjt
+    Call Tree:   Codificador8QAM.tre
+    Statistics:  Codificador8QAM.STA

@@ -1,0 +1,22 @@
+[PROJECT]
+Target=Decodificador8QAM.hex
+Processor_Text=PIC16F887
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Decodificador8QAM.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Decodificador8QAM.c]
+Type=4
+[mru-list]
+1=Decodificador8QAM.c
+[Opened Files]
+1=Decodificador8QAM.c
+2=..\Codificador8QAM\Codificador8QAM.c
+3=
+4=
+5=
+[Units]
+Count=1
+1=Decodificador8QAM (main)

@@ -1,0 +1,47 @@
+#include <16F887.h>         // Modify for your chip
+
+
+#fuses NOMCLR //Se configura master clear
+#fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
+
+#use delay(clock=20M)
+
+//Se ubican los registros de configuracion de puertos
+
+#Byte TRISA = 0x85 
+#Byte PORTA = 0x05
+#Byte TRISB = 0x86
+#Byte PORTB = 0x06
+
+//#DEVICE ADC = 0x10
+
+//#fuses XT,NOMCLR,NOWDT,PUT,NOLVP...
+
+//en XT le dice al pic que lleva un oscilador conectado <4mhz
+//el NOMCLR le dice al pic que deshabilita el pin masterclear, desactiva el reset externo por el pic MCLR
+//el NOWDT le dice al pic que deshabilita el Watchdog timer "perro guardian"
+//el PUT habilita el Power Up Timer, tiempo de espera para estabilizacion de alimentacion
+//el NOLVP deshabilita un pin asignado para la programacion de bajo voltaje... low voltage programing
+
+//#DEFINE I PIN_AN5
+//#DEFINE Q PIN_AN6
+
+long ADC;
+void main(void) {
+
+//Entradas y salidas
+setup_adc_ports(5,6);
+setup_adc(ADC_CLOCK_DIV_64);
+set_adc_channel(5);
+
+TRISB = 0b00000000; //1 = ENTRADA, 0 = SALIDA
+//enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas
+
+
+    while(true) {           // Produces a 1khz square wave on pin B0
+      set_adc_channel(5);
+      delay_us(10);
+      ADC=read_adc();
+      PORTB=ADC;
+      }
+}

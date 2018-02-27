@@ -1,0 +1,71 @@
+[PROJECT]
+Target=Codificador8QAM.hex
+Processor_Text=PIC16F887
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Codificador8QAM.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Codificador8QAM.c]
+Type=4
+[mru-list]
+1=Codificador8QAM.c
+
+[ProjectLog]
+Days=1
+D1=10-02-2018
+<<<<<<< HEAD
+D1_L=28
+=======
+D1_L=27
+>>>>>>> 2c58750e5751f5bdaae1662208e341e8d9e7af38
+D1_L1=[37493]Project Opened.
+D1_L2=[37600]Started Editing.
+D1_L3=[38676]Stopped Editing.
+TotalEdit=71
+TotalDebug=0
+D1_E=71
+D1_D=0
+D1_L4=[38781]Project Closed.
+D1_L5=[38800]Project Opened.
+D1_L6=[38843]Started Editing.
+D1_L7=[39302]Stopped Editing.
+D1_L8=[39866]Started Editing.
+D1_L9=[40267]Stopped Editing.
+D1_L10=[40287]Started Editing.
+D1_L11=[40861]Stopped Editing.
+D1_L12=[41311]Started Editing.
+D1_L13=[42795]Stopped Editing.
+D1_L14=[43474]Started Editing.
+D1_L15=[44293]Stopped Editing.
+D1_L16=[44397]Started Editing.
+D1_L17=[44697]Stopped Editing.
+D1_L18=[45229]Started Editing.
+D1_L19=[45535]Stopped Editing.
+D1_L20=[45706]Started Editing.
+D1_L21=[46148]Stopped Editing.
+D1_L22=[46563]Started Editing.
+D1_L23=[46870]Stopped Editing.
+D1_L24=[47076]Started Editing.
+D1_L25=[48298]Stopped Editing.
+D1_L26=[55184]Started Editing.
+D1_L27=[55647]Stopped Editing.
+<<<<<<< HEAD
+D1_L28=[56025]Project Closed.
+=======
+>>>>>>> 2c58750e5751f5bdaae1662208e341e8d9e7af38
+
+[Opened Files]
+1=Codificador8QAM.c
+t1=31
+Count=2
+2=Decodificador8QAM.c
+t2=434
+3=
+
+[defines]
+buildcount=47
+[Units]
+Count=1
+1=Codificador8QAM (main)
