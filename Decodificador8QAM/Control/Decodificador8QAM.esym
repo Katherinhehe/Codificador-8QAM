@@ -1,8 +1,8 @@
-C L "MAIN" 0 10 1 "FUNCTION"
-D G "__PCM__" 0 68 ""5.015""
-D G "__DEVICE__" 0 68 "887"
-D G "__DATE__" 0 68 ""24-feb.-18""
-D G "__TIME__" 0 68 ""00:17:10"" "Standard Header file for the PIC16F887 device ////////////////"
+D G "S" 0 26 "PIN_A0"
+D G "__PCM__" 0 123 ""5.015""
+D G "__DEVICE__" 0 123 "887"
+D G "__DATE__" 0 123 ""01-mar.-18""
+D G "__TIME__" 0 123 ""18:58:26"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 v L "value" 1 39 "int8" `54 
 f B "set_tris_a" 1 39 "void(int8 value)" `53 
@@ -851,14 +851,25 @@ d G "INT_RB5" 1 763 "0x1200B08"
 d G "INT_RB6" 1 764 "0x1400B08"
 d G "INT_RB7" 1 765 "0x1800B08"
 C L "jump_to_irs" 0 10 2 "FUNCTION"
-C L "jump_to_irs" 0 10 8 "FUNCTION"
-V G "adc" 0 29 "float" `624 
-V G "vI" 0 29 "float" `625 
-V G "vQ" 0 29 "float" `626 
-F G "control" 0 32 "void()" `627 
+D G "S" 0 26 "PIN_A0"
+C L "jump_to_irs" 0 10 2 "FUNCTION"
+V G "vI" 0 30 "float" `624 
+V G "vQ" 0 30 "float" `625 
+V G "p" 0 31 "int8" `626 
+V G "cuenta" 0 31 "int8" `627 
+F G "control" 0 34 "void()" `628 
 C L "control" 0 10 2 "FUNCTION"
 C L "control" 0 10 2 "FUNCTION"
-F G "MAIN" 0 47 "void()" `636  "Entradas y salidas"
+C L "control" 0 10 1 "FUNCTION"
+C L "control" 0 10 1 "FUNCTION"
+C L "control" 0 10 1 "FUNCTION"
+C L "control" 0 10 1 "FUNCTION"
+C L "control" 0 10 1 "FUNCTION"
+C L "control" 0 10 1 "FUNCTION"
+C L "control" 0 10 1 "FUNCTION"
+C L "control" 0 10 1 "FUNCTION"
+F G "MAIN" 0 98 "void()" `640 
+C L "MAIN" 0 10 1 "FUNCTION"
 C L "MAIN" 0 10 1 "FUNCTION"
 C L "MAIN" 0 10 1 "FUNCTION"
 C L "MAIN" 0 10 1 "FUNCTION"

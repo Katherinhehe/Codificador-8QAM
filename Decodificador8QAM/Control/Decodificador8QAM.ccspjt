@@ -13,7 +13,7 @@ Type=4
 1=Decodificador8QAM.c
 [Opened Files]
 1=Decodificador8QAM.c
-2=..\Codificador8QAM\Codificador8QAM.c
+2=..\..\Codificador8QAM\Control\Codificador8QAM.c
 3=
 4=
 5=
