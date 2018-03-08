@@ -2,8 +2,8 @@
 004-005 @WRITE_PROGRAM_MEMORY8.P2
 005     PORTA
 006     PORTB
-015     CCP_1
 015     CCP_1_LOW
+015     CCP_1
 016     CCP_1_HIGH
 01B     CCP_2
 01B     CCP_2_LOW
@@ -19,30 +19,6 @@
 02B-02E vQ
 02F     p
 030     cuenta
-031-034 @DIVFF.P1
-031     control.@SCRATCH1
-032-033 @ITOF.P1
-032-035 @FLT.P2
-032     control.@SCRATCH2
-033     control.@SCRATCH3
-034     control.@SCRATCH4
-035-038 @MULFF.P1
-035-038 @DIVFF.P2
-036-039 @FLT.P1
-039-03C @MULFF.P1
-039     @DIVFF.@SCRATCH1
-03A     @DIVFF.@SCRATCH2
-03A     @FLT.@SCRATCH1
-03B     @DIVFF.@SCRATCH3
-03B     @FLT.@SCRATCH2
-03C     @DIVFF.@SCRATCH4
-03D     @DIVFF.@SCRATCH5
-03D     @MULFF.@SCRATCH1
-03E     @DIVFF.@SCRATCH6
-03E     @MULFF.@SCRATCH2
-03F     @MULFF.@SCRATCH3
-040     @MULFF.@SCRATCH4
-041     @MULFF.@SCRATCH5
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -54,8 +30,8 @@
 0FF     @INTERRUPT_AREA
 107.6   C1OUT
 108.6   C2OUT
-10D-10E @READ_PROGRAM_MEMORY8.P1
-10D-10E @WRITE_PROGRAM_MEMORY8.P2
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
 17F     @INTERRUPT_AREA
 1FF     @INTERRUPT_AREA
 27F     @INTERRUPT_AREA
@@ -88,23 +64,19 @@ F7F     @INTERRUPT_AREA
 FFF     @INTERRUPT_AREA
 
 ROM Allocation:
-00002F  @ITOF
-00004C  @DIVFF
-000116  @MULFF
-00018B  @FLT
-0001CA  control
-000497  MAIN
-000497  @cinit1
-0004A9  @cinit2
+00002F  control
+00008A  MAIN
+00008A  @cinit1
+00009C  @cinit2
 
 Project Directory:
     C:\Users\Katherine\Documents\Comunicaciones Digitales\Codificador\Decodificador8QAM\Control\
 
 Project Files:
-    Decodificador8QAM.c                                     [01-mar.-18 18:58  CRC=F8B2E0F4]
+    Decodificador8QAM.c                                     [07-mar.-18 15:16  CRC=64D94350]
     ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [12-nov.-13 14:35  CRC=6CB1A611]
 
-Source signature=D2162D16
+Source signature=3E3C8F72
 
 Units:
     Decodificador8QAM (main)
@@ -112,7 +84,7 @@ Units:
 Compiler Settings:
     Processor:      PIC16F887
     Pointer Size:   16
-    ADC Range:      0-1023
+    ADC Range:      0-255
     Opt Level:      9
     Short,Int,Long: UNSIGNED: 1,8,16
     Float,Double:   32,32

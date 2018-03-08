@@ -1,6 +1,6 @@
 #include <16F887.h>         // Modify for your chip
 
-//#DEVICE ADC = 10
+#DEVICE ADC = 10
 
 #fuses NOMCLR //Se configura master clear
 #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
@@ -33,53 +33,7 @@ int p,cuenta;
 
 #int_EXT
 void control(){
-      if(cuenta==3){
-         cuenta=0;
-      }
-      switch (cuenta){
-         case 0:
-            if(p==0 || p==1 || p==2 || p==3){
-               output_low(S);
-            }else{ 
-               output_high(S);
-            }
-            break;
-         case 1:
-             if(p==0 || p==1 || p==4 || p==5){
-               output_low(S);
-            }else{ 
-               output_high(S);
-            }break;
-         case 2:
-            if(p==0 || p==2 || p==4 || p==6){
-               output_low(S);
-            }else{ 
-               output_high(S);
-            }break;      
-      }
-      cuenta++;
-}
-
-void main(void) {
-vI=0;
-vQ=0;
-p=7;
-cuenta=0;
-//Entradas y salidas
-enable_interrupts(int_ext);      //activar interrupcion externa
-ext_int_edge(H_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida
-enable_interrupts(GLOBAL); 
-
-//lcd_init();
-//!setup_adc_ports(5,6);
-//!setup_adc(ADC_CLOCK_DIV_32);
-
-TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA
-//enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas
-output_low(S);
-
-    while(true) {           // Produces a 1khz square wave on pin B0
-
+//!   
 //!      set_adc_channel(5);
 //!      vI=read_adc();
 //!      vI=(vI/1024)*5;
@@ -110,6 +64,52 @@ output_low(S);
 //!         if(0<=vQ<=0.625){
 //!            p=6;
 //!         }
-//!      }         
+//!      }
+      if(cuenta=3){
+         cuenta=0;
+      }
+      switch (cuenta){
+         case 0:
+            if(p==0 || p==1 || p==2 || p==3){
+               output_low(S);
+            }else{ 
+               output_high(S);
+            }
+            break;
+         case 1:
+             if(p==0 || p==1 || p==4 || p==5){
+               output_low(S);
+            }else{ 
+               output_high(S);
+            }break;
+         case 2:
+            if(p==0 || p==2 || p==4 || p==6){
+               output_low(S);
+            }else{ 
+               output_high(S);
+            }break;      
+      }cuenta++;
+}
+
+void main(void) {
+vI=0;
+vQ=0;
+p=5;
+cuenta=0;
+//Entradas y salidas
+enable_interrupts(int_ext);      //activar interrupcion externa
+ext_int_edge(H_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida
+enable_interrupts(GLOBAL); 
+
+//lcd_init();
+//!setup_adc_ports(5,6);
+//!setup_adc(ADC_CLOCK_DIV_32);
+
+TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA
+//enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas
+output_low(S);
+
+    while(true) {           // Produces a 1khz square wave on pin B0
+         
       }
 }

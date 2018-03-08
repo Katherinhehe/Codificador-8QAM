@@ -63,7 +63,7 @@ void control(){
 void main(void) {
 vI=0;
 vQ=0;
-p=7;
+p=5;
 cuenta=0;
 //Entradas y salidas
 enable_interrupts(int_ext);      //activar interrupcion externa

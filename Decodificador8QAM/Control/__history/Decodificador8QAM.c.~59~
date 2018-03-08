@@ -1,6 +1,6 @@
 #include <16F887.h>         // Modify for your chip
 
-//#DEVICE ADC = 10
+#DEVICE ADC = 10
 
 #fuses NOMCLR //Se configura master clear
 #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
@@ -63,7 +63,7 @@ void control(){
 void main(void) {
 vI=0;
 vQ=0;
-p=7;
+p=5;
 cuenta=0;
 //Entradas y salidas
 enable_interrupts(int_ext);      //activar interrupcion externa
@@ -79,8 +79,7 @@ TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA
 output_low(S);
 
     while(true) {           // Produces a 1khz square wave on pin B0
-
-//!      set_adc_channel(5);
+      //!      set_adc_channel(5);
 //!      vI=read_adc();
 //!      vI=(vI/1024)*5;
 //!      set_adc_channel(6);
