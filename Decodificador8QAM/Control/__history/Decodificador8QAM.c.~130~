@@ -2,6 +2,7 @@
 //#include <lcd.c>
 
 #DEVICE ADC = 10
+
 #fuses HS,NOWDT,NOMCLR,NOPROTECT,NOLVP
 
 #use delay(clock=20M)
@@ -35,54 +36,48 @@
 
 
 
-int16 vI=0,vQ=0;
+float vI=0,vQ=0;
 int p=0;
 int cuenta=0;
 
 #int_EXT
 void control(){   
       set_adc_channel(0);
-      delay_us(30);
+      delay_us(20);
       vI=read_adc();
       set_adc_channel(1);
-      delay_us(30);
+      delay_us(20);
       vQ=read_adc();
       
-//!      if((0<=vI)&&(vI<512)){
-//!      p=1;
-//!      }else{
-//!      p=0;
-//!      }
-//!      
-      if((384<vI)&&(vI<=640)){ //i=2.5V  [000,010]
-        if((640<vQ)&&(vQ<=896)){ //q=3.75  [000]
+      if(384<vI<=640){ //i=2.5V  [000,010]
+        if(640<vQ<=4.375){ //q=3.75  [000]
             p=0;
-        }if((128<vQ)&&(vQ<=384)){  //q=1.25    [010]
+        }if(128<vQ<=384){  //q=1.25    [010]
             p=2;
         }
-      }if((128<vI)&&(vI<=384) && (384<vQ)&&(vQ<=640)){   //i=1.25   [001]
+      }if(128<vI<=384 && 384<vQ<=640){   //i=1.25   [001]
          p=1;
-      }if((640<vI)&&(vI<=896) && (384<vQ)&&(vQ<=640)){    //i=3.75  [011]
+      }if(640<vI<=896 && 384<vQ<=640){    //i=3.75  [011]
          p=3;
-      }if((896<vI)&&(vI<=1023)){   //i=5   [100,111]
-         if((896<vQ)&&(vQ<=1023)){  //q=5 [100]
+      }if(896<vI<=1024){   //i=5   [100,111]
+         if(896<vQ<=1024){  //q=5 [100]
             p=4;
          }
-         if((0<=vQ)&&(vQ<=128)){    //q=0  [111]
+         if(0<=vQ<=128){    //q=0  [111]
             p=7;
          }
-      }if((0<=vI)&&(vI<=128)){   //
+      }if(0<=vI<=128){   //
          if(896<vQ<=1024){
             p=5;
          }
-         if((0<=vQ)&&(vQ<=128)){
+         if(0<=vQ<=128){
             p=6;
          }
       }
-//!
       if(cuenta==3){
          cuenta=0;
       }
+      p=1;
       switch (cuenta){
          case 0:
             if(p==0 || p==1 || p==2 || p==3){
@@ -123,7 +118,7 @@ ANSELH= 0b00000000;//Puerto E
 TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA
 
 
-setup_adc_ports(sAN0|sAN1,VSS_VDD);
+setup_adc_ports(sAN0|sAN1);
 setup_adc(ADC_CLOCK_INTERNAL);           // Built-in A/D setup function
 //setup_adc(ADC_CLOCK_DIV_32);
 
