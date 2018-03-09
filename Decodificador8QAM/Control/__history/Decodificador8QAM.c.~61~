@@ -33,7 +33,31 @@ int p,cuenta;
 
 #int_EXT
 void control(){
-
+      if(cuenta==3){
+         cuenta=0;
+      }
+      switch (cuenta){
+         case 0:
+            if(p==0 || p==1 || p==2 || p==3){
+               output_low(S);
+            }else{ 
+               output_high(S);
+            }
+            break;
+         case 1:
+             if(p==0 || p==1 || p==4 || p==5){
+               output_low(S);
+            }else{ 
+               output_high(S);
+            }break;
+         case 2:
+            if(p==0 || p==2 || p==4 || p==6){
+               output_low(S);
+            }else{ 
+               output_high(S);
+            }break;      
+      }
+      cuenta++;
 }
 
 void main(void) {
