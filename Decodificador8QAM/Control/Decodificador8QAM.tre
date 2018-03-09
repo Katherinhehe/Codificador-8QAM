@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ÀÄDecodificador8QAM
    ÃÄMAIN  0/99  Ram=0
    ³  ÀÄ@cinit1  (Inline)  Ram=0
@@ -41,3 +42,9 @@
       ÃÄ@FLT  0/63  Ram=10
       ÃÄ@ITOF  0/29  Ram=2
       ÀÄ@FLT  0/63  Ram=10
+=======
+ÀÄDecodificador8QAM
+   ÃÄMAIN  0/44  Ram=0
+   ³  ÀÄ@cinit1  (Inline)  Ram=0
+   ÀÄcontrol  0/91  Ram=0
+>>>>>>> 4360e3e04234cae2a4c5382c5c3a904f807d263f

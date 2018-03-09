@@ -1,3 +1,9 @@
+<<<<<<< HEAD
       Memory usage:   ROM=16%      RAM=6% - 11%
       0 Errors,  0 Warnings.
 Build Successful.
+=======
+      Memory usage:   ROM=2%      RAM=6% - 6%
+      0 Errors,  0 Warnings.
+Build Successful.
+>>>>>>> 4360e3e04234cae2a4c5382c5c3a904f807d263f

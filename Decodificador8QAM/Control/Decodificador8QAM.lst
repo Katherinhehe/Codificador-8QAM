@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CCS PCM C Compiler, Version 5.070, 56587               09-mar.-18 00:39
 
                Filename:   C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\Decodificador8QAM\Control\Decodificador8QAM.lst
@@ -1433,3 +1434,332 @@ CCS PCM C Compiler, Version 5.070, 56587               09-mar.-18 00:39
 Configuration Fuses:
    Word  1: 2FC2   HS NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
    Word  2: 3FFF   BORV40 NOWRT
+=======
+CCS PCM C Compiler, Version 5.015, 5967               07-mar.-18 15:23
+
+               Filename:   C:\Users\Katherine\Documents\Comunicaciones Digitales\Codificador\Decodificador8QAM\Control\Decodificador8QAM.lst
+
+               ROM used:   182 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   22 (6%) at main() level
+                           22 (6%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   08A
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  BCF    03.7
+0016:  BCF    03.5
+0017:  BTFSS  0B.4
+0018:  GOTO   01B
+0019:  BTFSC  0B.1
+001A:  GOTO   02C
+001B:  MOVF   22,W
+001C:  MOVWF  04
+001D:  MOVF   23,W
+001E:  MOVWF  77
+001F:  MOVF   24,W
+0020:  MOVWF  78
+0021:  MOVF   25,W
+0022:  MOVWF  79
+0023:  MOVF   26,W
+0024:  MOVWF  7A
+0025:  MOVF   20,W
+0026:  MOVWF  0A
+0027:  SWAPF  21,W
+0028:  MOVWF  03
+0029:  SWAPF  7F,F
+002A:  SWAPF  7F,W
+002B:  RETFIE
+002C:  BCF    0A.3
+002D:  BCF    0A.4
+002E:  GOTO   02F
+.................... #include <16F887.h>         // Modify for your chip 
+.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F887 
+....................  
+.................... #list 
+....................  
+....................  
+.................... //#DEVICE ADC = 10 
+....................  
+.................... #fuses NOMCLR //Se configura master clear 
+.................... #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad 
+.................... #fuses HS 
+....................  
+.................... #use delay(clock=20M) 
+....................  
+.................... //#include <lcd.c> 
+.................... //Se ubican los registros de configuracion de puertos 
+....................  
+.................... #Byte TRISA = 0x85  
+.................... #Byte PORTA = 0x05 
+.................... #Byte TRISB = 0x86 
+.................... #Byte PORTB = 0x06 
+....................  
+.................... //#fuses XT,NOMCLR,NOWDT,PUT,NOLVP... 
+....................  
+.................... //en XT le dice al pic que lleva un oscilador conectado <4mhz 
+.................... //el NOMCLR le dice al pic que deshabilita el pin masterclear, desactiva el reset externo por el pic MCLR 
+.................... //el NOWDT le dice al pic que deshabilita el Watchdog timer "perro guardian" 
+.................... //el PUT habilita el Power Up Timer, tiempo de espera para estabilizacion de alimentacion 
+.................... //el NOLVP deshabilita un pin asignado para la programacion de bajo voltaje... low voltage programing 
+....................  
+.................... #DEFINE S PIN_A0 
+.................... //#DEFINE I PIN_AN5 
+.................... //#DEFINE Q PIN_AN6 
+....................  
+.................... float vI,vQ; 
+.................... int p,cuenta; 
+....................  
+.................... #int_EXT 
+.................... void control(){ 
+....................       if(cuenta==3){ 
+002F:  MOVF   30,W
+0030:  SUBLW  03
+0031:  BTFSC  03.2
+....................          cuenta=0; 
+0032:  CLRF   30
+....................       } 
+....................       switch (cuenta){ 
+0033:  MOVF   30,W
+0034:  BTFSC  03.2
+0035:  GOTO   03D
+0036:  XORLW  01
+0037:  BTFSC  03.2
+0038:  GOTO   055
+0039:  XORLW  03
+003A:  BTFSC  03.2
+003B:  GOTO   06D
+003C:  GOTO   085
+....................          case 0: 
+....................             if(p==0 || p==1 || p==2 || p==3){ 
+003D:  MOVF   2F,F
+003E:  BTFSC  03.2
+003F:  GOTO   04B
+0040:  DECFSZ 2F,W
+0041:  GOTO   043
+0042:  GOTO   04B
+0043:  MOVF   2F,W
+0044:  SUBLW  02
+0045:  BTFSC  03.2
+0046:  GOTO   04B
+0047:  MOVF   2F,W
+0048:  SUBLW  03
+0049:  BTFSS  03.2
+004A:  GOTO   050
+....................                output_low(S); 
+004B:  BSF    03.5
+004C:  BCF    05.0
+004D:  BCF    03.5
+004E:  BCF    05.0
+....................             }else{  
+004F:  GOTO   054
+....................                output_high(S); 
+0050:  BSF    03.5
+0051:  BCF    05.0
+0052:  BCF    03.5
+0053:  BSF    05.0
+....................             } 
+....................             break; 
+0054:  GOTO   085
+....................          case 1: 
+....................              if(p==0 || p==1 || p==4 || p==5){ 
+0055:  MOVF   2F,F
+0056:  BTFSC  03.2
+0057:  GOTO   063
+0058:  DECFSZ 2F,W
+0059:  GOTO   05B
+005A:  GOTO   063
+005B:  MOVF   2F,W
+005C:  SUBLW  04
+005D:  BTFSC  03.2
+005E:  GOTO   063
+005F:  MOVF   2F,W
+0060:  SUBLW  05
+0061:  BTFSS  03.2
+0062:  GOTO   068
+....................                output_low(S); 
+0063:  BSF    03.5
+0064:  BCF    05.0
+0065:  BCF    03.5
+0066:  BCF    05.0
+....................             }else{  
+0067:  GOTO   06C
+....................                output_high(S); 
+0068:  BSF    03.5
+0069:  BCF    05.0
+006A:  BCF    03.5
+006B:  BSF    05.0
+....................             }break; 
+006C:  GOTO   085
+....................          case 2: 
+....................             if(p==0 || p==2 || p==4 || p==6){ 
+006D:  MOVF   2F,F
+006E:  BTFSC  03.2
+006F:  GOTO   07C
+0070:  MOVF   2F,W
+0071:  SUBLW  02
+0072:  BTFSC  03.2
+0073:  GOTO   07C
+0074:  MOVF   2F,W
+0075:  SUBLW  04
+0076:  BTFSC  03.2
+0077:  GOTO   07C
+0078:  MOVF   2F,W
+0079:  SUBLW  06
+007A:  BTFSS  03.2
+007B:  GOTO   081
+....................                output_low(S); 
+007C:  BSF    03.5
+007D:  BCF    05.0
+007E:  BCF    03.5
+007F:  BCF    05.0
+....................             }else{  
+0080:  GOTO   085
+....................                output_high(S); 
+0081:  BSF    03.5
+0082:  BCF    05.0
+0083:  BCF    03.5
+0084:  BSF    05.0
+....................             }break;       
+....................       } 
+....................       cuenta++; 
+0085:  INCF   30,F
+0086:  BCF    0B.1
+0087:  BCF    0A.3
+0088:  BCF    0A.4
+0089:  GOTO   01B
+.................... } 
+....................  
+.................... void main(void) { 
+008A:  MOVF   03,W
+008B:  ANDLW  1F
+008C:  MOVWF  03
+008D:  BSF    03.5
+008E:  BSF    03.6
+008F:  MOVF   09,W
+0090:  ANDLW  C0
+0091:  MOVWF  09
+0092:  BCF    03.6
+0093:  BCF    1F.4
+0094:  BCF    1F.5
+0095:  MOVLW  00
+0096:  BSF    03.6
+0097:  MOVWF  08
+0098:  BCF    03.5
+0099:  CLRF   07
+009A:  CLRF   08
+009B:  CLRF   09
+009C:  BCF    03.7
+.................... vI=0; 
+009D:  BCF    03.6
+009E:  CLRF   2A
+009F:  CLRF   29
+00A0:  CLRF   28
+00A1:  CLRF   27
+.................... vQ=0; 
+00A2:  CLRF   2E
+00A3:  CLRF   2D
+00A4:  CLRF   2C
+00A5:  CLRF   2B
+.................... p=7; 
+00A6:  MOVLW  07
+00A7:  MOVWF  2F
+.................... cuenta=0; 
+00A8:  CLRF   30
+.................... //Entradas y salidas 
+.................... enable_interrupts(int_ext);      //activar interrupcion externa 
+00A9:  BSF    0B.4
+.................... ext_int_edge(H_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida 
+00AA:  BSF    03.5
+00AB:  BCF    01.6
+.................... enable_interrupts(GLOBAL);  
+00AC:  MOVLW  C0
+00AD:  BCF    03.5
+00AE:  IORWF  0B,F
+....................  
+.................... //lcd_init(); 
+.................... //!setup_adc_ports(5,6); 
+.................... //!setup_adc(ADC_CLOCK_DIV_32); 
+....................  
+.................... TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA 
+00AF:  BSF    03.5
+00B0:  CLRF   05
+.................... //enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas 
+.................... output_low(S); 
+00B1:  BCF    05.0
+00B2:  BCF    03.5
+00B3:  BCF    05.0
+....................  
+....................     while(true) {           // Produces a 1khz square wave on pin B0 
+00B4:  GOTO   0B4
+....................  
+.................... //!      set_adc_channel(5); 
+.................... //!      vI=read_adc(); 
+.................... //!      vI=(vI/1024)*5; 
+.................... //!      set_adc_channel(6); 
+.................... //!      vQ=read_adc(); 
+.................... //!      vQ=(vQ/1024)*5; 
+.................... //!      if(1.875<vI<=3.125){ //i=2.5V  [000,010] 
+.................... //!        if(3.125<vQ<=4.375){ //q=3.75  [000] 
+.................... //!            p=0; 
+.................... //!        }if(0.625<vQ<=1.875){  //q=1.25    [010] 
+.................... //!            p=2; 
+.................... //!        } 
+.................... //!      }if(0.625<vI<=1.875 && 1.875<vQ<=3.125){   //i=1.25   [001] 
+.................... //!         p=1; 
+.................... //!      }if(3.125<vI<=4.375 && 1.875<vQ<=3.125){    //i=3.75  [011] 
+.................... //!         p=3; 
+.................... //!      }if(4.375<vQ<=5){   //i=5   [100,111] 
+.................... //!         if(4.375<vQ<=5){  //q=5 [100] 
+.................... //!            p=4; 
+.................... //!         } 
+.................... //!         if(0<=vQ<=0.625){    //q=0  [111] 
+.................... //!            p=7; 
+.................... //!         } 
+.................... //!      }if(0<=vI<=0.625){   // 
+.................... //!         if(4.375<vQ<=5){ 
+.................... //!            p=5; 
+.................... //!         } 
+.................... //!         if(0<=vQ<=0.625){ 
+.................... //!            p=6; 
+.................... //!         } 
+.................... //!      }          
+....................       } 
+.................... } 
+00B5:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FC2   HS NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT
+>>>>>>> 4360e3e04234cae2a4c5382c5c3a904f807d263f

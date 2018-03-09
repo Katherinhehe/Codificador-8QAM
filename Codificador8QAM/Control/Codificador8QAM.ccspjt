@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [PROJECT]
 Target=Codificador8QAM.hex
 Processor_Text=PIC16F628A
@@ -45,3 +46,25 @@ buildcount=3
 [Units]
 Count=1
 1=Codificador8QAM (main)
+=======
+[PROJECT]
+Target=Codificador8QAM.hex
+Processor_Text=PIC16F628A
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Codificador8QAM.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\
+[Codificador8QAM.c]
+Type=4
+[mru-list]
+1=Codificador8QAM.c
+[Opened Files]
+1=Codificador8QAM.c
+2=
+3=
+[Units]
+Count=1
+1=Codificador8QAM (main)
+>>>>>>> 4360e3e04234cae2a4c5382c5c3a904f807d263f
