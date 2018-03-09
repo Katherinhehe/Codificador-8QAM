@@ -1,7 +1,7 @@
 ÀÄDecodificador8QAM
-   ÃÄMAIN  0/62  Ram=0
+   ÃÄMAIN  0/99  Ram=0
    ³  ÀÄ@cinit1  (Inline)  Ram=0
-   ÀÄcontrol  0/717  Ram=4
+   ÀÄcontrol  0/714  Ram=4
       ÃÄ@ITOF  0/29  Ram=2
       ÃÄ@DIVFF  0/202  Ram=14
       ÃÄ@MULFF  0/117  Ram=13

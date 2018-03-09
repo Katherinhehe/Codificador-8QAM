@@ -1,7 +1,7 @@
 [PROJECT]
 Target=Decodificador8QAM.hex
 Processor_Text=PIC16F887
-CCSVersion=5.015
+CCSVersion=5.070
 Compiler=PCM
 [Target Data]
 FileList=Decodificador8QAM.c
@@ -13,10 +13,65 @@ Type=4
 1=Decodificador8QAM.c
 [Opened Files]
 1=Decodificador8QAM.c
-2=..\..\Codificador8QAM\Control\Codificador8QAM.c
+2=..\..\..\..\..\..\..\Program Files (x86)\PICC\examples\ex_admm.c
 3=
 4=
 5=
+t1=113
+Count=1
+t2=37
+
+[ProjectLog]
+Days=4
+D1=04-03-2018
+D1_L=4
+D1_L1=[43403]Project Opened.
+D1_L2=[70433]Started Editing.
+D1_L3=[70847]Stopped Editing.
+TotalEdit=34
+TotalDebug=0
+D1_E=2
+D1_D=0
+D1_L4=[79467]Project Closed.
+D2=06-03-2018
+D2_L=14
+D2_L1=[44732]Project Opened.
+D2_L2=[44769]Started Editing.
+D2_L3=[45079]Stopped Editing.
+D2_L4=[45618]Started Editing.
+D2_L5=[46190]Stopped Editing.
+D2_L6=[46223]Started Editing.
+D2_L7=[46594]Stopped Editing.
+D2_E=27
+D2_D=0
+D2_L8=[46594]Project Closed.
+D2_L9=[46626]Project Opened.
+D2_L10=[46634]Project Closed.
+D2_L11=[49597]Project Opened.
+D2_L12=[50043]Started Editing.
+D2_L13=[51270]Stopped Editing.
+D2_L14=[51979]Project Closed.
+D3=08-03-2018
+D3_L=8
+D3_L1=[83146]Project Opened.
+D3_L2=[83168]Project Closed.
+D3_L3=[83757]Project Opened.
+D3_L4=[83818]Started Editing.
+D3_L5=[85077]Stopped Editing.
+D3_L6=[85240]Started Editing.
+D3_L7=[85541]Stopped Editing.
+D3_L8=[85577]Started Editing.
+D4=09-03-2018
+D4_L=4
+D4_L1=[1806]Project Opened.
+D4_L2=[2111]Started Editing.
+D4_L3=[2369]Stopped Editing.
+D4_E=5
+D4_D=0
+D4_L4=[2369]Project Closed.
+
+[defines]
+buildcount=31
 [Units]
 Count=1
 1=Decodificador8QAM (main)

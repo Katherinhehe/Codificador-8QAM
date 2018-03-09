@@ -1,66 +1,66 @@
-CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
+CCS PCM C Compiler, Version 5.070, 56587               06-mar.-18 13:46
 
-               Filename:   C:\Users\Katherine\Documents\Comunicaciones Digitales\Codificador\Codificador8QAM\Codificador8QAM.lst
+               Filename:   C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\Codificador8QAM\Control\Codificador8QAM.lst
 
-               ROM used:   210 words (3%)
-                           Largest free fragment is 2048
-               RAM used:   41 (11%) at main() level
-                           44 (12%) worst case
+               ROM used:   195 words (10%)
+                           Largest free fragment is 1853
+               RAM used:   42 (19%) at main() level
+                           45 (20%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 8
 
 *
 0000:  MOVLW  00
 0001:  MOVWF  0A
-0002:  GOTO   081
+0002:  GOTO   080
 0003:  NOP
 0004:  MOVWF  7F
 0005:  SWAPF  03,W
 0006:  CLRF   03
 0007:  MOVWF  21
-0008:  MOVF   0A,W
+0008:  MOVF   7F,W
 0009:  MOVWF  20
-000A:  CLRF   0A
-000B:  MOVF   04,W
-000C:  MOVWF  22
-000D:  MOVF   77,W
-000E:  MOVWF  23
-000F:  MOVF   78,W
-0010:  MOVWF  24
-0011:  MOVF   79,W
-0012:  MOVWF  25
-0013:  MOVF   7A,W
-0014:  MOVWF  26
-0015:  BCF    03.7
-0016:  BCF    03.5
-0017:  BTFSS  0B.4
-0018:  GOTO   01B
-0019:  BTFSC  0B.1
-001A:  GOTO   02C
-001B:  MOVF   22,W
-001C:  MOVWF  04
-001D:  MOVF   23,W
-001E:  MOVWF  77
-001F:  MOVF   24,W
-0020:  MOVWF  78
-0021:  MOVF   25,W
-0022:  MOVWF  79
-0023:  MOVF   26,W
-0024:  MOVWF  7A
-0025:  MOVF   20,W
-0026:  MOVWF  0A
-0027:  SWAPF  21,W
-0028:  MOVWF  03
-0029:  SWAPF  7F,F
-002A:  SWAPF  7F,W
-002B:  RETFIE
-002C:  BCF    0A.3
-002D:  BCF    0A.4
-002E:  GOTO   02F
-.................... #include <16F887.h>         // Modify for your chip 
-.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+000A:  MOVF   0A,W
+000B:  MOVWF  27
+000C:  CLRF   0A
+000D:  SWAPF  20,F
+000E:  MOVF   04,W
+000F:  MOVWF  22
+0010:  MOVF   77,W
+0011:  MOVWF  23
+0012:  MOVF   78,W
+0013:  MOVWF  24
+0014:  MOVF   79,W
+0015:  MOVWF  25
+0016:  MOVF   7A,W
+0017:  MOVWF  26
+0018:  BCF    03.7
+0019:  BCF    03.5
+001A:  BTFSS  0B.4
+001B:  GOTO   01E
+001C:  BTFSC  0B.1
+001D:  GOTO   02F
+001E:  MOVF   22,W
+001F:  MOVWF  04
+0020:  MOVF   23,W
+0021:  MOVWF  77
+0022:  MOVF   24,W
+0023:  MOVWF  78
+0024:  MOVF   25,W
+0025:  MOVWF  79
+0026:  MOVF   26,W
+0027:  MOVWF  7A
+0028:  MOVF   27,W
+0029:  MOVWF  0A
+002A:  SWAPF  21,W
+002B:  MOVWF  03
+002C:  SWAPF  7F,F
+002D:  SWAPF  7F,W
+002E:  RETFIE
+.................... #include <16F628A.h>         // Modify for your chip 
+.................... //////////// Standard Header file for the PIC16F628A device //////////////// 
 .................... /////////////////////////////////////////////////////////////////////////// 
-.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
 .................... //// This source code may only be used by licensed users of the CCS C  //// 
 .................... //// compiler.  This source code may only be distributed to other      //// 
 .................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
@@ -68,7 +68,7 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 .................... //// Derivative programs created using this software in object code    //// 
 .................... //// form are not restricted in any way.                               //// 
 .................... /////////////////////////////////////////////////////////////////////////// 
-.................... #device PIC16F887 
+.................... #device PIC16F628A 
 ....................  
 .................... #list 
 ....................  
@@ -76,8 +76,9 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 ....................  
 .................... #fuses NOMCLR //Se configura master clear 
 .................... #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad 
+.................... #fuseS HS 
 ....................  
-.................... #use delay(clock=4M) 
+.................... #use delay(clock=20M) 
 ....................  
 .................... //Se ubican los registros de configuracion de puertos 
 ....................  
@@ -102,39 +103,37 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 ....................  
 ....................  
 .................... int cuenta=0,p=0; 
-.................... //0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,1,0,1,1,1,0,1,1,1 
 .................... unsigned int arreglo[24]={0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,1,0,1,1,1,0,1,1,1}; 
 *
-0096:  BCF    03.6
-0097:  CLRF   29
-0098:  CLRF   2A
-0099:  CLRF   2B
-009A:  CLRF   2C
-009B:  CLRF   2D
-009C:  MOVLW  01
-009D:  MOVWF  2E
-009E:  CLRF   2F
-009F:  MOVWF  30
-00A0:  CLRF   31
-00A1:  CLRF   32
-00A2:  MOVWF  33
-00A3:  MOVWF  34
-00A4:  MOVWF  35
-00A5:  CLRF   36
-00A6:  CLRF   37
-00A7:  MOVWF  38
-00A8:  CLRF   39
-00A9:  MOVWF  3A
-00AA:  MOVWF  3B
-00AB:  MOVWF  3C
-00AC:  CLRF   3D
-00AD:  MOVWF  3E
-00AE:  MOVWF  3F
-00AF:  MOVWF  40
+0088:  CLRF   2A
+0089:  CLRF   2B
+008A:  CLRF   2C
+008B:  CLRF   2D
+008C:  CLRF   2E
+008D:  MOVLW  01
+008E:  MOVWF  2F
+008F:  CLRF   30
+0090:  MOVWF  31
+0091:  CLRF   32
+0092:  CLRF   33
+0093:  MOVWF  34
+0094:  MOVWF  35
+0095:  MOVWF  36
+0096:  CLRF   37
+0097:  CLRF   38
+0098:  MOVWF  39
+0099:  CLRF   3A
+009A:  MOVWF  3B
+009B:  MOVWF  3C
+009C:  MOVWF  3D
+009D:  CLRF   3E
+009E:  MOVWF  3F
+009F:  MOVWF  40
+00A0:  MOVWF  41
 .................... unsigned int aux[3]={0,0,0}; 
-00B0:  CLRF   41
-00B1:  CLRF   42
-00B2:  CLRF   43
+00A1:  CLRF   42
+00A2:  CLRF   43
+00A3:  CLRF   44
 ....................  
 ....................  
 ....................  
@@ -143,21 +142,21 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 ....................  
 .................... if(cuenta==24){ 
 *
-002F:  MOVF   27,W
+002F:  MOVF   28,W
 0030:  SUBLW  18
 0031:  BTFSC  03.2
 ....................    cuenta=0; 
-0032:  CLRF   27
+0032:  CLRF   28
 .................... } 
 ....................     
 .................... if(p==3){ 
-0033:  MOVF   28,W
+0033:  MOVF   29,W
 0034:  SUBLW  03
 0035:  BTFSS  03.2
 0036:  GOTO   059
 ....................  
 ....................    if(aux[0]==1){ 
-0037:  DECFSZ 41,W
+0037:  DECFSZ 42,W
 0038:  GOTO   03E
 ....................       output_high(P1); 
 0039:  BSF    03.5
@@ -173,7 +172,7 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 0041:  BCF    05.1
 ....................    } 
 ....................    if(aux[1]==1){ 
-0042:  DECFSZ 42,W
+0042:  DECFSZ 43,W
 0043:  GOTO   049
 ....................       output_high(P2); 
 0044:  BSF    03.5
@@ -189,7 +188,7 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 004C:  BCF    05.2
 ....................    } 
 ....................    if(aux[2]==1){ 
-004D:  DECFSZ 43,W
+004D:  DECFSZ 44,W
 004E:  GOTO   054
 ....................       output_high(P3); 
 004F:  BSF    03.5
@@ -206,12 +205,12 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 ....................    } 
 ....................  
 ....................    p=0; 
-0058:  CLRF   28
+0058:  CLRF   29
 .................... } 
 ....................  
 .................... if(arreglo[cuenta]==1){ 
-0059:  MOVLW  29
-005A:  ADDWF  27,W
+0059:  MOVLW  2A
+005A:  ADDWF  28,W
 005B:  MOVWF  04
 005C:  BCF    03.7
 005D:  DECFSZ 00,W
@@ -230,113 +229,98 @@ CCS PCM C Compiler, Version 5.015, 5967               27-feb.-18 13:11
 0067:  BCF    05.0
 .................... } 
 .................... aux[p]=arreglo[cuenta]; 
-0068:  MOVLW  41
-0069:  ADDWF  28,W
+0068:  MOVLW  42
+0069:  ADDWF  29,W
 006A:  MOVWF  78
 006B:  CLRF   7A
 006C:  BTFSC  03.0
 006D:  INCF   7A,F
-006E:  MOVLW  29
-006F:  ADDWF  27,W
+006E:  MOVLW  2A
+006F:  ADDWF  28,W
 0070:  MOVWF  04
 0071:  BCF    03.7
 0072:  MOVF   00,W
-0073:  MOVWF  46
+0073:  MOVWF  47
 0074:  MOVF   78,W
 0075:  MOVWF  04
 0076:  BCF    03.7
 0077:  BTFSC  7A.0
 0078:  BSF    03.7
-0079:  MOVF   46,W
+0079:  MOVF   47,W
 007A:  MOVWF  00
 ....................  
 .................... p++; 
-007B:  INCF   28,F
+007B:  INCF   29,F
 .................... cuenta++; 
-007C:  INCF   27,F
+007C:  INCF   28,F
 007D:  BCF    0B.1
 007E:  BCF    0A.3
-007F:  BCF    0A.4
-0080:  GOTO   01B
+007F:  GOTO   01E
 .................... } 
 ....................  
 ....................  
 ....................  
 .................... void main(void) { 
-0081:  MOVF   03,W
-0082:  ANDLW  1F
-0083:  MOVWF  03
-0084:  CLRF   27
-0085:  CLRF   28
-0086:  BSF    03.5
-0087:  BSF    03.6
-0088:  MOVF   09,W
-0089:  ANDLW  C0
-008A:  MOVWF  09
-008B:  BCF    03.6
-008C:  BCF    1F.4
-008D:  BCF    1F.5
-008E:  MOVLW  00
-008F:  BSF    03.6
-0090:  MOVWF  08
-0091:  BCF    03.5
-0092:  CLRF   07
-0093:  CLRF   08
-0094:  CLRF   09
-0095:  BCF    03.7
+0080:  MOVF   03,W
+0081:  ANDLW  1F
+0082:  MOVWF  03
+0083:  CLRF   28
+0084:  CLRF   29
+0085:  MOVLW  07
+0086:  MOVWF  1F
+0087:  BCF    03.7
 ....................  
 .................... //Entradas y salidas 
 .................... TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA 
 *
-00B3:  BSF    03.5
-00B4:  CLRF   05
+00A4:  BSF    03.5
+00A5:  CLRF   05
 .................... TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA 
-00B5:  MOVLW  01
-00B6:  MOVWF  06
+00A6:  MOVLW  01
+00A7:  MOVWF  06
 ....................  
 .................... enable_interrupts(int_ext);      //activar interrupcion externa 
-00B7:  BCF    03.5
-00B8:  BSF    0B.4
+00A8:  BCF    03.5
+00A9:  BSF    0B.4
 .................... ext_int_edge(H_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida 
-00B9:  BSF    03.5
-00BA:  BCF    01.6
+00AA:  BSF    03.5
+00AB:  BCF    01.6
 .................... enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas 
-00BB:  MOVLW  C0
-00BC:  BCF    03.5
-00BD:  IORWF  0B,F
+00AC:  MOVLW  C0
+00AD:  BCF    03.5
+00AE:  IORWF  0B,F
 .................... p=0; 
-00BE:  CLRF   28
+00AF:  CLRF   29
 .................... cuenta=0; 
-00BF:  CLRF   27
+00B0:  CLRF   28
 .................... output_low(S); 
-00C0:  BSF    03.5
-00C1:  BCF    05.0
-00C2:  BCF    03.5
-00C3:  BCF    05.0
+00B1:  BSF    03.5
+00B2:  BCF    05.0
+00B3:  BCF    03.5
+00B4:  BCF    05.0
 .................... output_low(P1); 
-00C4:  BSF    03.5
-00C5:  BCF    05.1
-00C6:  BCF    03.5
-00C7:  BCF    05.1
+00B5:  BSF    03.5
+00B6:  BCF    05.1
+00B7:  BCF    03.5
+00B8:  BCF    05.1
 .................... output_low(P2); 
-00C8:  BSF    03.5
-00C9:  BCF    05.2
-00CA:  BCF    03.5
-00CB:  BCF    05.2
+00B9:  BSF    03.5
+00BA:  BCF    05.2
+00BB:  BCF    03.5
+00BC:  BCF    05.2
 .................... output_low(P3); 
-00CC:  BSF    03.5
-00CD:  BCF    05.3
-00CE:  BCF    03.5
-00CF:  BCF    05.3
+00BD:  BSF    03.5
+00BE:  BCF    05.3
+00BF:  BCF    03.5
+00C0:  BCF    05.3
 ....................  
 ....................  
 ....................     while(true) {           // Produces a 1khz square wave on pin B0 
-00D0:  GOTO   0D0
+00C1:  GOTO   0C1
 ....................        
 ....................       } 
 .................... } 
-00D1:  SLEEP
+00C2:  SLEEP
 
 Configuration Fuses:
-   Word  1: 2FC7   RC NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
-   Word  2: 3FFF   BORV40 NOWRT
+   Word  1: 3F42   NOWDT PUT HS NOMCLR BROWNOUT NOLVP NOCPD NOPROTECT

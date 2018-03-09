@@ -1,19 +1,29 @@
 #include <16F887.h>         // Modify for your chip
+//#include <lcd.c>
 
-#DEVICE ADC = 10
+#DEVICE ADC = 8
 
-#fuses NOMCLR //Se configura master clear
-#fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
+#fuses HS,NOWDT,NOMCLR,NOPROTECT,NOLVP
 
 #use delay(clock=20M)
 
-//#include <lcd.c>
+
+
+
 //Se ubican los registros de configuracion de puertos
 
 #Byte TRISA = 0x85 
 #Byte PORTA = 0x05
+#Byte ANSEL = 0x188
+#Byte ANSELH = 0x189
+
 #Byte TRISB = 0x86
 #Byte PORTB = 0x06
+
+
+#DEFINE I PIN_A0
+#DEFINE Q PIN_A1
+#DEFINE S PIN_B1
 
 //#fuses XT,NOMCLR,NOWDT,PUT,NOLVP...
 
@@ -23,26 +33,24 @@
 //el PUT habilita el Power Up Timer, tiempo de espera para estabilizacion de alimentacion
 //el NOLVP deshabilita un pin asignado para la programacion de bajo voltaje... low voltage programing
 
-#DEFINE S PIN_A0
-//#DEFINE I PIN_AN5
-//#DEFINE Q PIN_AN6
 
-float vI,vQ;
-int p,cuenta;
+
+
+float vI=0,vQ=0;
+int p=0;
+int cuenta=0;
 
 #int_EXT
 void control(){
    
-      set_adc_channel(5);
+      set_adc_channel(0);
+      delay_us(20);
       vI=read_adc();
       vI=(vI/1024)*5;
-      //lcd_gotoxy(1,1);
-      //printf(lcd_putc,"Voltaje = %.2f V", vI);
-      set_adc_channel(6);
+      set_adc_channel(1);
+      delay_us(20);
       vQ=read_adc();
       vQ=(vQ/1024)*5;
-      //lcd_gotoxy(1,2);
-      //printf(lcd_putc,"Voltaje = %.2f V", vQ);
       if(1.875<vI<=3.125){ //i=2.5V  [000,010]
         if(3.125<vQ<=4.375){ //q=3.75  [000]
             p=0;
@@ -68,7 +76,7 @@ void control(){
             p=6;
          }
       }
-      if(cuenta=3){
+      if(cuenta==3){
          cuenta=0;
       }
       switch (cuenta){
@@ -105,14 +113,21 @@ enable_interrupts(int_ext);      //activar interrupcion externa
 ext_int_edge(H_TO_L);         //configuracion:interrupcion cuando señal esta en flanco de subida
 enable_interrupts(GLOBAL); 
 
-//lcd_init();
-setup_adc_ports(5,6);
-setup_adc(ADC_CLOCK_DIV_32);
+TRISA = 0b00000011; //1 = ENTRADA, 0 = SALIDA
+ANSEL = 0b00000011;
+ANSELH= 0b00000000;
+TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA
 
-TRISA = 0b00000000; //1 = ENTRADA, 0 = SALIDA
-//enable_interrupts(GLOBAL);      //todas las interrupciones desactivadas
+
+setup_adc(ADC_CLOCK_INTERNAL);           // Built-in A/D setup function
+setup_adc_ports(sAN0|sAN1);
+set_adc_channel(0);                       // Built-in A/D setup function
+delay_us(20);
+
+
 output_low(S);
-
+output_low(Q);
+output_low(I);
     while(true) {           // Produces a 1khz square wave on pin B0
          
       }

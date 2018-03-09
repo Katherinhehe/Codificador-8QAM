@@ -1,10 +1,11 @@
-#include <16F887.h>         // Modify for your chip
+#include <16F628A.h>         // Modify for your chip
 
 
 #fuses NOMCLR //Se configura master clear
 #fuses NOWDT  //Se indican los fuses activos/inactivos. Y el indicativo de alta velocidad
+#fuseS HS
 
-#use delay(clock=4M)
+#use delay(clock=20M)
 
 //Se ubican los registros de configuracion de puertos
 
@@ -29,7 +30,6 @@
 
 
 int cuenta=0,p=0;
-//0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,1,0,1,1,1,0,1,1,1
 unsigned int arreglo[24]={0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,1,0,1,1,1,0,1,1,1};
 unsigned int aux[3]={0,0,0};
 
