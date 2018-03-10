@@ -14,13 +14,13 @@ Type=4
 1=Codificador8QAM.c
 
 [ProjectLog]
-Days=2
+Days=3
 D1=27-02-2018
 D1_L=4
 D1_L1=[71125]Project Opened.
 D1_L2=[71150]Started Editing.
 D1_L3=[71452]Stopped Editing.
-TotalEdit=2
+TotalEdit=3
 TotalDebug=0
 D1_E=1
 D1_D=0
@@ -33,6 +33,14 @@ D2_L3=[49587]Stopped Editing.
 D2_E=1
 D2_D=0
 D2_L4=[49587]Project Closed.
+D3=10-03-2018
+D3_L=4
+D3_L1=[43469]Project Opened.
+D3_L2=[43477]Started Editing.
+D3_L3=[43801]Stopped Editing.
+D3_E=1
+D3_D=0
+D3_L4=[44962]Project Closed.
 
 [Opened Files]
 1=..\..\Decodificador8QAM\Control\Decodificador8QAM.c
@@ -42,11 +50,7 @@ Count=1
 t2=1
 
 [defines]
-buildcount=3
-[Units]
-Count=1
-1=Codificador8QAM (main)
-=======
+buildcount=4
 [PROJECT]
 Target=Codificador8QAM.hex
 Processor_Text=PIC16F628A
@@ -64,6 +68,8 @@ Type=4
 1=Codificador8QAM.c
 2=
 3=
+t1=1
+Count=1
 [Units]
 Count=1
 1=Codificador8QAM (main)
