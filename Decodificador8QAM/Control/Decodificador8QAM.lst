@@ -1,8 +1,8 @@
-CCS PCM C Compiler, Version 5.070, 56587               10-mar.-18 19:55
+CCS PCM C Compiler, Version 5.070, 56587               12-mar.-18 22:09
 
                Filename:   C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\Decodificador8QAM\Control\Decodificador8QAM.lst
 
-               ROM used:   473 words (6%)
+               ROM used:   465 words (6%)
                            Largest free fragment is 2048
                RAM used:   18 (5%) at main() level
                            19 (5%) worst case
@@ -646,25 +646,14 @@ CCS PCM C Compiler, Version 5.070, 56587               10-mar.-18 19:55
 01CC:  BCF    06.1
 01CD:  BCF    03.5
 01CE:  BCF    06.1
-.................... output_low(Q); 
-01CF:  BSF    03.5
-01D0:  BCF    05.1
-01D1:  BCF    03.5
-01D2:  BCF    05.1
-.................... output_low(I); 
-01D3:  BSF    03.5
-01D4:  BCF    05.0
-01D5:  BCF    03.5
-01D6:  BCF    05.0
-....................  
 ....................  
 ....................     while(true) {           // Produces a 1khz square wave on pin B0 
-01D7:  GOTO   1D7
+01CF:  GOTO   1CF
 ....................           
 ....................       } 
 .................... } 
 ....................  
-01D8:  SLEEP
+01D0:  SLEEP
 
 Configuration Fuses:
    Word  1: 2FC2   HS NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG

@@ -1,9 +1,9 @@
 
-ROM used:   473/8192 (6%)
-            473/8192 (6%) including unused fragments
+ROM used:   465/8192 (6%)
+            465/8192 (6%) including unused fragments
 
             0.5 Average locations per line
-            6.1 Average locations per statement
+            6.2 Average locations per statement
 
 RAM used:   18/368 (5%) at main() level
             19/368 (5%) worst case
@@ -13,34 +13,34 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  169    77 100  Decodificador8QAM.c
+  166    75 100  Decodificador8QAM.c
   776     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
 ----- -----
-  945    77 Total
+  942    75 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0    346  73    1   2317  7.9  control
-0     80  17    0    412  3.3  MAIN
+0    346  74    1   2317  7.9  control
+0     72  15    0    359  3.3  MAIN
  Inline         0             @cinit1
 
 Program metrics:
     Functions               2
-    Statements              77
+    Statements              75
     Comments                194
-    Volume (V)              3014
-    Difficulty (D)          11.2
-    Effort to implement (E) 33614
-    Time to implement (T)   31 minutes
+    Volume (V)              2942
+    Difficulty (D)          11.1
+    Effort to implement (E) 32779
+    Time to implement (T)   30 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   18
-    Maintainability (MI)    93
+    Maintainability (MI)    94
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
 00004-0002E    43  0  
-0002F-007FF   426  1575  
+0002F-007FF   418  1583  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
