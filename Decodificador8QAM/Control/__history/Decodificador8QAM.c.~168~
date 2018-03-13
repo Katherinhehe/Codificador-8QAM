@@ -2,7 +2,6 @@
 //#include <lcd.c>
 
 #DEVICE ADC = 10
-
 #fuses HS,NOWDT,NOMCLR,NOPROTECT,NOLVP
 
 #use delay(clock=20M)
@@ -36,47 +35,58 @@
 
 
 
-float vI=0,vQ=0;
-int adc=0;
+int16 vI=0,vQ=0;
 int p=0;
 int cuenta=0;
 
 #int_EXT
-void control(){
-//!   
+void control(){   
       set_adc_channel(0);
-      delay_us(20);
-      adc=read_adc();
-      vI=(adc/1024)*5;
+      delay_us(30);
+      vI=read_adc();
       set_adc_channel(1);
-      delay_us(20);
-      adc=read_adc();
-      vQ=(adc/1024)*5;
-      if(1.875<vI<=3.125){ //i=2.5V  [000,010]
-        if(3.125<vQ<=4.375){ //q=3.75  [000]
+      delay_us(30);
+      vQ=read_adc();
+      
+//!      if((0<=vI)&&(vI<512)){
+//!      p=1;
+//!      }else{
+//!      p=0;
+//!      }
+//!      
+      if((768<=vI)&&(vI<=1023)){ //i=2.5V  [000,010]
+        
+        if((640<vQ)&&(vQ<=896)){ //q=3.75  [000]
             p=0;
-        }if(0.625<vQ<=1.875){  //q=1.25    [010]
+        }if((128<vQ)&&(vQ<=384)){  //q=1.25    [010]
             p=2;
         }
-      }if(0.625<vI<=1.875 && 1.875<vQ<=3.125){   //i=1.25   [001]
+      }
+      
+      if((128<vI)&&(vI<=384) && (384<vQ)&&(vQ<=640)){   //i=1.25   [001]
          p=1;
-      }if(3.125<vI<=4.375 && 1.875<vQ<=3.125){    //i=3.75  [011]
+      }
+      
+      if((640<vI)&&(vI<=896) && (384<vQ)&&(vQ<=640)){    //i=3.75  [011]
          p=3;
-      }if(4.375<vQ<=5){   //i=5   [100,111]
-         if(4.375<vQ<=5){  //q=5 [100]
+      }
+      
+      if((896<vI)&&(vI<=1023)){   //i=5   [100,111]
+         if((896<vQ)&&(vQ<=1023)){  //q=5 [100]
             p=4;
          }
-         if(0<=vQ<=0.625){    //q=0  [111]
+         if((0<=vQ)&&(vQ<=128)){    //q=0  [111]
             p=7;
          }
-      }if(0<=vI<=0.625){   //
-         if(4.375<vQ<=5){
+      }if((0<=vI)&&(vI<=128)){   //
+         if(896<vQ<=1024){
             p=5;
          }
-         if(0<=vQ<=0.625){
+         if((0<=vQ)&&(vQ<=128)){
             p=6;
          }
       }
+//!
       if(cuenta==3){
          cuenta=0;
       }
@@ -107,7 +117,7 @@ void control(){
 void main(void) {
 vI=0;
 vQ=0;
-p=0;
+p=1;
 cuenta=0;
 //Entradas y salidas
 enable_interrupts(int_ext);      //activar interrupcion externa
@@ -120,14 +130,15 @@ ANSELH= 0b00000000;//Puerto E
 TRISB = 0b00000001; //1 = ENTRADA, 0 = SALIDA
 
 
+setup_adc_ports(sAN0|sAN1,VSS_VDD);
 setup_adc(ADC_CLOCK_INTERNAL);           // Built-in A/D setup function
 //setup_adc(ADC_CLOCK_DIV_32);
-setup_adc_ports(0,1);
-
 
 output_low(S);
 output_low(Q);
 output_low(I);
+
+
     while(true) {           // Produces a 1khz square wave on pin B0
          
       }

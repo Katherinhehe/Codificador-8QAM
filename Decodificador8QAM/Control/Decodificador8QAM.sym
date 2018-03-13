@@ -108,10 +108,10 @@ Project Directory:
     C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\Decodificador8QAM\Control\
 
 Project Files:
-    Decodificador8QAM.c                                     [09-mar.-18 14:17  CRC=D1B35047]
+    Decodificador8QAM.c                                     [10-mar.-18 18:42  CRC=E2EBBCFB]
     ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [24-feb.-17 16:21  CRC=480F3B7F]
 
-Source signature=61D1C745
+Source signature=730A33F9
 Program memory checksum=0000
 Program memory CRC=0000
 Hex file CRC=0F9D

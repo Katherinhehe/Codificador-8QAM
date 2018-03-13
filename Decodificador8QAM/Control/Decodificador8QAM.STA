@@ -13,10 +13,10 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  140    77 100  Decodificador8QAM.c
+  169    77 100  Decodificador8QAM.c
   776     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
 ----- -----
-  916    77 Total
+  945    77 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -27,14 +27,14 @@ Page ROM  %  RAM    Vol Diff  Functions:
 Program metrics:
     Functions               2
     Statements              77
-    Comments                168
+    Comments                194
     Volume (V)              3014
     Difficulty (D)          11.2
     Effort to implement (E) 33614
     Time to implement (T)   31 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   18
-    Maintainability (MI)    122
+    Maintainability (MI)    93
 
  Segment     Used  Free
 -----------  ----  ----

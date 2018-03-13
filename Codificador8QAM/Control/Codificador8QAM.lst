@@ -1,6 +1,6 @@
-CCS PCM C Compiler, Version 5.070, 56587               10-mar.-18 12:05
+CCS PCM C Compiler, Version 5.070, 56587               10-mar.-18 19:57
 
-               Filename:   C:\Users\Nicolas Zamora\Documents\Codificador-8QAM\Codificador8QAM\Control\Codificador8QAM.lst
+               Filename:   C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\Codificador8QAM\Control\Codificador8QAM.lst
 
                ROM used:   195 words (10%)
                            Largest free fragment is 1853
@@ -293,11 +293,11 @@ CCS PCM C Compiler, Version 5.070, 56587               10-mar.-18 12:05
 00AF:  CLRF   29
 .................... cuenta=0; 
 00B0:  CLRF   28
-.................... output_low(S); 
+.................... output_high(S); 
 00B1:  BSF    03.5
 00B2:  BCF    05.0
 00B3:  BCF    03.5
-00B4:  BCF    05.0
+00B4:  BSF    05.0
 .................... output_low(P1); 
 00B5:  BSF    03.5
 00B6:  BCF    05.1

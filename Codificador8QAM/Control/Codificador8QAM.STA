@@ -14,7 +14,7 @@ Stack size: 8
 Lines Stmts  %   Files
 ----- ----- ---  -----
   101    42 100  Codificador8QAM.c
-  521     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h
+  521     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h
 ----- -----
   622    42 Total
 

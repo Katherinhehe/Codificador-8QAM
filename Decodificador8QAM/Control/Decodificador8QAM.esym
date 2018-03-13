@@ -1,10 +1,10 @@
 C L "MAIN" 0 2 1 "FUNCTION"
-D G "__PCM__" 0 141 ""5.070""
-D G "__DEVICE__" 0 141 "887"
-D G "__DATE__" 0 141 ""09-mar.-18""
-D G "__TIME__" 0 141 ""14:17:09""
-D G "_UNICODE" 0 141 ""?""
-D G "__EVAL" 0 141 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
+D G "__PCM__" 0 170 ""5.070""
+D G "__DEVICE__" 0 170 "887"
+D G "__DATE__" 0 170 ""10-mar.-18""
+D G "__TIME__" 0 170 ""19:55:14""
+D G "_UNICODE" 0 170 ""?""
+D G "__EVAL" 0 170 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 f N "set_tris_a" 1 39 ""
 v L "value" 1 39 "int8" `55 
@@ -1126,7 +1126,7 @@ V G "p" 0 39 "int8" `612
 V G "cuenta" 0 40 "int8" `613 
 F N "control" 0 43 ""
 F G "control" 0 43 "void()" `614 
-C L "control" 0 2 5 "FUNCTION"
+C L "control" 0 2 26 "FUNCTION"
 C L "control" 0 2 1 "FUNCTION"
 C L "control" 0 2 1 "FUNCTION"
 C L "control" 0 2 1 "FUNCTION"
@@ -1135,8 +1135,8 @@ C L "control" 0 2 1 "FUNCTION"
 C L "control" 0 2 1 "FUNCTION"
 C L "control" 0 2 1 "FUNCTION"
 C L "control" 0 2 1 "FUNCTION"
-F N "MAIN" 0 110 ""
-F G "MAIN" 0 110 "void()" `615 
+F N "MAIN" 0 139 ""
+F G "MAIN" 0 139 "void()" `615 
 C L "MAIN" 0 2 1 "FUNCTION"
 C L "MAIN" 0 2 1 "FUNCTION"
 C L "MAIN" 0 2 1 "FUNCTION"

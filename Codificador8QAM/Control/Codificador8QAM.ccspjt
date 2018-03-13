@@ -34,13 +34,15 @@ D2_E=1
 D2_D=0
 D2_L4=[49587]Project Closed.
 D3=10-03-2018
-D3_L=4
+D3_L=6
 D3_L1=[43469]Project Opened.
 D3_L2=[43477]Started Editing.
 D3_L3=[43801]Stopped Editing.
 D3_E=1
 D3_D=0
 D3_L4=[44962]Project Closed.
+D3_L5=[71842]Project Opened.
+D3_L6=[77235]Project Closed.
 
 [Opened Files]
 1=..\..\Decodificador8QAM\Control\Decodificador8QAM.c
@@ -50,7 +52,7 @@ Count=1
 t2=1
 
 [defines]
-buildcount=4
+buildcount=5
 [PROJECT]
 Target=Codificador8QAM.hex
 Processor_Text=PIC16F628A
@@ -73,4 +75,3 @@ Count=1
 [Units]
 Count=1
 1=Codificador8QAM (main)
->>>>>>> 4360e3e04234cae2a4c5382c5c3a904f807d263f

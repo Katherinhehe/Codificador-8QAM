@@ -37,16 +37,16 @@ ROM Allocation:
 000087  @cinit2
 
 Project Directory:
-    C:\Users\Nicolas Zamora\Documents\Codificador-8QAM\Codificador8QAM\Control\
+    C:\Users\Nicolas Zamora\Documents\ComunicacionesDigitales\Codificador-8QAM\Codificador8QAM\Control\
 
 Project Files:
-    Codificador8QAM.c                                       [10-mar.-18 12:05  CRC=0D2998CE]
-    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h [24-feb.-17 16:21  CRC=1D4A2635]
+    Codificador8QAM.c                                       [10-mar.-18 19:55  CRC=0D2998CE]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h [24-feb.-17 16:21  CRC=1D4A2635]
 
 Source signature=47BDE538
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=D735
+Hex file CRC=870F
 
 Units:
     Codificador8QAM (main)
