@@ -157,9 +157,6 @@ setup_adc(ADC_CLOCK_INTERNAL);           // Built-in A/D setup function
 //setup_adc(ADC_CLOCK_DIV_32);
 
 output_low(S);
-output_low(Q);
-output_low(I);
-
 
     while(true) {           // Produces a 1khz square wave on pin B0
          
